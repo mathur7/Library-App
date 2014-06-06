@@ -9,20 +9,20 @@ LibraryApp.controller("LibraryCtrl", ["$scope", ($scope)->
 
 	$scope.deleteLibrary = ->
 		$scope.libraries.splice(@$index,1)
-]);
+])
 
 
-LibraryApp.controller("BooksCtrl", ["$scope",($scope)->
+LibraryApp.controller("BooksCtrl", ["$scope", ($scope)->
   console.log $scope.newBook
-  $scope.library.books = []
+  $scope.books = []
   $scope.addBook = ->
-    $scope.library.books.push($scope.newBook) 
+    $scope.books.push($scope.newBook) 
     $scope.newBook = {}
     # console.log("hello")
 
-  # $scope.deleteBook = ->
-  #   $scope.books.splice(@$index,1)
-]);
+  $scope.deleteBook = ->
+    $scope.books.splice(@$index,1)
+])
 
 
 
