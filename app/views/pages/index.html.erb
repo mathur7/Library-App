@@ -1,0 +1,30 @@
+<h1>The Library</h1>
+
+<div ng-controller="LibraryCtrl">
+  <form ng-submit="addLibrary()">
+    <input type="text" ng-model="newLibrary.title" placeholder="Title">
+    <input type="text" ng-model="newLibrary.owner" placeholder="Owner">
+    <button>Add Library</button>
+  </form>
+
+  <div ng-repeat="library in libraries">
+    <li>{{library.title}} - {{library.owner}} <button ng-click="deleteLibrary()">Delete</button>
+    </li>
+
+    <div ng-controller="BooksCtrl">
+      <form ng-submit="addBook()">
+        <input type="text" ng-model="newBook.title" placeholder="Title">
+        <input type="text" ng-model="newBook.author" placeholder="Author">
+        <input type="text" ng-model="newBook.description" placeholder="Description">
+        <button>Add Book</button>
+      </form>
+
+      <ul ng-repeat="book in books">
+        <li>{{book.title}}, by {{book.author}} <button ng-click="deleteBook()">Delete</button>
+        </li>
+      </ul>
+
+    </div>
+
+  </div>
+</div>
